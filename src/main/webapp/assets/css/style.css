@@ -31,6 +31,7 @@ body {
     margin-right: auto;
     margin-top: 80px;
 }
+
 .cetnerBorder {
 
     background: #FFCCCC;
@@ -43,9 +44,10 @@ body {
     height: 300px;
     opacity: 0.8;
     overflow: scroll;
-    margin:auto;
+    margin: auto;
     border: 3px solid #ccccfd;
 }
+
 /*.text-center {
     margin-bottom: 1%;
     font-family: monospace;
@@ -63,6 +65,7 @@ body {
     text-shadow: 3px 3px 0 #eb452b,
     5px 5px 0 #d884ef
 }
+
 .chooseElement {
     float: left;
     margin-right: 50px;
@@ -140,7 +143,6 @@ td, th, tr {
     width: 20%;
     text-align: center;
 }
-
 
 
 ::selection {

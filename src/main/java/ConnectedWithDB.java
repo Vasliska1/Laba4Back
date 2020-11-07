@@ -41,7 +41,7 @@ public class ConnectedWithDB {
     }
 
     public void add(Point point) throws SQLException, NamingException {
-        if(connection==null)
+        if (connection == null)
             connectionDB();
 
         PreparedStatement s = connection.prepareStatement(
@@ -55,7 +55,7 @@ public class ConnectedWithDB {
     }
 
     public List<Point> getPointList() throws SQLException, NamingException {
-        if(connection==null)
+        if (connection == null)
             connectionDB();
 
         ResultSet rs = connection.createStatement().executeQuery("select * from results");
@@ -64,7 +64,7 @@ public class ConnectedWithDB {
             Point point = new Point();
             point.setX(rs.getDouble("x"));
             point.setY(rs.getDouble("y"));
-            point.setR( rs.getDouble("r"));
+            point.setR(rs.getDouble("r"));
             point.setResult(rs.getBoolean("result"));
             result.add(point);
         }
