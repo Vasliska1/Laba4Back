@@ -29,19 +29,15 @@
                     <p:slider for="x" display="x_out" minValue="-4" maxValue="4" step="0.1"/>
                     <h:outputText id="x_out"/>
                 </p:column>
-
-
                 <br/>
+
                 <p:column>
                     <h:outputLabel for="y">Значение Y от -5 до 5</h:outputLabel>
                     <p:inputNumber minValue="-5"
                                    maxValue="5" decimalPlaces="3"
                                    id="y"
-                                   value="#{pointBean.point.y}"
-                    />
+                                   value="#{pointBean.point.y}"/>
                 </p:column>
-
-
                 <br/>
 
                 <p:column>
@@ -50,13 +46,10 @@
                 </p:column>
                 <br/>
 
-
                 <p:commandButton id="out_button"
                                  value="ВВОД" ajax="false"
                                  action="#{pointBean.addPoint}"/>
-
             </p:panel>
-
         </h:form>
 
         <div class="svg">
@@ -140,5 +133,4 @@
     <script type="text/javascript" src="assets/check.js"></script>
 
 </div>
-
 </html>
