@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:jsp="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+    <title>Lab3</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+
+</h:head>
+<h:body style="text-align: center">
+
+    <div class="basis">
+        <h:form id="getForm">
+
+            <p:panel header="Введите значения:">
+
+                <p:column>
+                    <h:outputLabel for="x">Значение X от -4 до 4</h:outputLabel>
+                    <h:inputHidden id="x" value="#{pointBean.point.x}"/>
+                    <p:slider for="x" display="x_out" minValue="-4" maxValue="4" step="0.1"/>
+                    <h:outputText id="x_out"/>
+                </p:column>
+
+
+                <br/>
+                <p:column>
+                    <h:outputLabel for="y">Значение Y от -5 до 5</h:outputLabel>
+                    <p:inputNumber minValue="-5"
+                                   maxValue="5" decimalPlaces="3"
+                                   id="y"
+                                   value="#{pointBean.point.y}"
+                    />
+                </p:column>
+
+
+                <br/>
+
+                <p:column>
+                    <h:outputLabel for="r">Значение R от 1 до 3</h:outputLabel>
+                    <p:spinner id="r" value="#{pointBean.point.r}" stepFactor="0.5" min="1" max="3"/>
+                </p:column>
+                <br/>
+
+
+                <p:commandButton id="out_button"
+                                 value="ВВОД" ajax="false"
+                                 action="#{pointBean.addPoint}"
+                />
+
+            </p:panel>
+
+        </h:form>
+
+        <div class="svg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" id="graph" class="svg-graph">
+
+
+                <polygon class="frame" points="0,0 0,300 300,300 300,0"/>
+
+                <polygon class="przamoyg" points="150,150 250,150 250,100, 150,100"
+                         fill="#FF00CC" stroke="black"></polygon>
+
+                <polygon class="treyg" points="150,150 200,150 150,200"
+                         fill="#FF00CC" stroke="black"></polygon>
+
+                <g transform="translate(150 150) scale(-25,25)">
+                    <path d="M0 0 L 0 -2 A2 2 0 0 1  2  0 " fill="#FF00CC" stroke="black" stroke-width="0.03"></path>
+                </g>
+
+
+                <line class="line" x1="0" x2="300" y1="150" y2="150" stroke="black"></line>
+                <line class="line" x1="150" x2="150" y1="0" y2="300" stroke="black"></line>
+
+
+                <text class="text" x="195" y="140">R/2</text>
+                <text class="text" x="248" y="140">R</text>
+
+                <text class="text" x="40" y="140">-R</text>
+                <text class="text" x="90" y="140">-R/2</text>
+
+                <text class="text" x="160" y="105">R/2</text>
+                <text class="text" x="160" y="55">R</text>
+
+                <text class="text" x="160" y="205">-R/2</text>
+                <text class="text" x="160" y="255">-R</text>
+
+                <text class="text" x="290" y="170">X</text>
+                <text class="text" x="160" y="13">Y</text>
+
+               <g> <circle class="point" cx="0" cy="0" r="0" fill="orange" stroke="navy" stroke-width="10"
+                        id="point"></circle> </g>
+
+            </svg>
+        </div>
+
+
+        <h:form>
+            <p:button outcome="to_index" value="Вернуться назадд" icon="pi"/>
+        </h:form>
+
+    </div>
+</h:body>
+
+
+<div class="cetnerBorder">
+    <h:form id="tableForm">
+    <h:dataTable id="tableData" value="#{pointBean.pointList}" var="point">
+        <h:column>
+            <f:facet name="header">X</f:facet>
+            #{point.x}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Y</f:facet>
+            #{point.y}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">R</f:facet>
+            #{point.r}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Result</f:facet>
+            #{point.result}
+        </h:column>
+    </h:dataTable>
+    </h:form>
+    <script type="text/javascript" src="assets/check.js"></script>
+
+</div>
+
+</html>

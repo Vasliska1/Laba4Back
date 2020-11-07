@@ -1,0 +1,43 @@
+.basis {
+    background: #FFCCCC;
+    color: black;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    width: 650px;
+    height: 650px;
+    opacity: 0.8;
+    border: 3px solid #ccccfd;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+.basis h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #8443c7;
+    font-family: monospace;
+    font-weight: 100;
+    text-shadow: 3px 3px 0 #eb452b,
+    5px 5px 0 #d884ef
+}
+
+.ui-analog-clock {
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.ui-clock {
+    margin-left: 268px;
+    height: 300px;
+    width: 400px;
+    background: #ece2ff;
+
+}
+

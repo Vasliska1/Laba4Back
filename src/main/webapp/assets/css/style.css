@@ -1,0 +1,170 @@
+body {
+    background-size: 100%;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.header, .footer {
+    padding: 1em 0;
+}
+
+.header {
+    color: #b3b3fc;
+    font-family: serif;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.basis {
+    background: #FFCCCC;
+    color: black;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    width: 650px;
+    height: 500px;
+    opacity: 0.8;
+    border: 3px solid #ccccfd;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+.cetnerBorder {
+
+    background: #FFCCCC;
+    color: black;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    width: 650px;
+    height: 300px;
+    opacity: 0.8;
+    overflow: scroll;
+    margin:auto;
+    border: 3px solid #ccccfd;
+}
+/*.text-center {
+    margin-bottom: 1%;
+    font-family: monospace;
+    text-align: center;
+    font-size: 200%;
+    color: #49147a;
+    flex-grow: 0;
+}*/
+.basis h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #8443c7;
+    font-family: monospace;
+    font-weight: 100;
+    text-shadow: 3px 3px 0 #eb452b,
+    5px 5px 0 #d884ef
+}
+.chooseElement {
+    float: left;
+    margin-right: 50px;
+}
+
+.ui-analog-clock {
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.ui-clock {
+    margin-left: 268px;
+    height: 300px;
+    width: 400px;
+    background: #ece2ff;
+}
+
+.butt {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 200px;
+    height: 50px;
+    background: #ccccfd;
+    color: black;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.butt:hover {
+    background: #6e68bd;
+}
+
+.button {
+    width: 45px;
+    padding: 5px;
+    margin-bottom: 5px;
+
+}
+
+.buttons {
+    width: 190px;
+}
+
+.reset {
+    width: 45px;
+    padding: 5px;
+    margin-bottom: 5px;
+
+}
+
+.button:hover {
+    background-position: 0 0;
+    color: #fff;
+}
+
+.button:focus {
+    background-position: 0 0;
+    color: #fff;
+}
+
+table {
+    color: black;
+    width: 100%;
+    border-spacing: 1px;
+    text-align: center;
+    overflow: scroll;
+}
+
+td, th, tr {
+    width: 20%;
+    text-align: center;
+}
+
+
+
+::selection {
+    background: #ccccfd;
+}
+
+#image {
+    border: 3px solid #ccccfd;
+    margin-left: 30px;
+    width: 250px;
+    height: 250px;
+}
+
+#VT_logo {
+    background: #ccccfd
+}
+
+input[type=text] {
+    font-size: 15px;
+    text-align: center;
+}
+
+.frame {
+    opacity: 0;
+}
+
+
