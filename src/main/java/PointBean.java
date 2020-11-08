@@ -1,14 +1,18 @@
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.naming.NamingException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@ManagedBean(name = "pointBean")
+@ApplicationScoped
 public class PointBean {
 
-    private ConnectedWithDB connectedWithDB = new ConnectedWithDB();
+    @ManagedProperty(value = "#{connection}")
+    private ConnectedWithDB connectedWithDB;
     private Point point;
 
     public PointBean() {
@@ -28,5 +32,9 @@ public class PointBean {
 
     public List<Point> getPointList() throws SQLException, NamingException {
         return connectedWithDB.getPointList();
+    }
+
+    public void setConnectedWithDB(ConnectedWithDB connectedWithDB) {
+        this.connectedWithDB = connectedWithDB;
     }
 }

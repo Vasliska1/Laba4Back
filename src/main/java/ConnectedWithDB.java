@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean
+@ManagedBean(name = "connection", eager = true)
 @ApplicationScoped
 public class ConnectedWithDB {
     private DataSource dataSource;
