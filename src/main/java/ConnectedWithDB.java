@@ -1,3 +1,4 @@
+import javax.annotation.Resource;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.naming.Context;
@@ -9,25 +10,23 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean(name = "connection", eager = true)
+@ManagedBean(name = "connection")
 @ApplicationScoped
 public class ConnectedWithDB {
+    @Resource(name = "java:/comp/env/jdbc/postgres")
     private DataSource dataSource;
     private Connection connection;
 
-    @PostConstruct
+@PostConstruct
     public void init() throws NamingException, SQLException {
         connectionDB();
     }
 
     private void connectionDB() throws NamingException, SQLException {
 
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String user = "postgres";
-        String password = "postgres";
 
         try {
-            connection = DriverManager.getConnection(url, user, password);
+            connection = dataSource.getConnection();
             System.out.println("Connection completed.");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -35,7 +34,7 @@ public class ConnectedWithDB {
 
         connection.createStatement().execute(
                 "create table if not exists results (" +
-                        "x double , y double, r double, result boolean)");
+                        "x float , y float, r float, result boolean)");
 
 
     }
@@ -62,9 +61,9 @@ public class ConnectedWithDB {
         List<Point> result = new ArrayList<>();
         while (rs.next()) {
             Point point = new Point();
-            point.setX(rs.getDouble("x"));
-            point.setY(rs.getDouble("y"));
-            point.setR(rs.getDouble("r"));
+            point.setX(rs.getFloat("x"));
+            point.setY(rs.getFloat("y"));
+            point.setR(rs.getFloat("r"));
             point.setResult(rs.getBoolean("result"));
             result.add(point);
         }
